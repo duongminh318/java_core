@@ -1,0 +1,5 @@
+hello Bruce
+DKM
+
+DMCS= 21
+Student [mSSV=100, hoTen=Nguyễn Văn Tèo]

@@ -1,0 +1,32 @@
+package controller;
+
+import java.awt.Button;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import view.MiniCalculatorView;
+
+public class MiniCalculatorListener implements ActionListener {
+
+	private MiniCalculatorView miniCalculatorView;
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		String src= e.getActionCommand();
+		if(Button.equals("+")){
+			this.miniCalculatorView.plus();
+		}else if(button.equals("-")){
+			this.miniCalculatorView.minus();
+		}else if(button.equals("*")){
+			this.miniCalculatorView.multiply();
+		}else if(button.equals("/")){
+			this.miniCalculatorView.divide();
+		}else if(button.equals("^")){
+			this.miniCalculatorView.pow();
+		}else if(button.equals("%")){
+			this.miniCalculatorView.mod();
+		}
+		
+	}
+
+}

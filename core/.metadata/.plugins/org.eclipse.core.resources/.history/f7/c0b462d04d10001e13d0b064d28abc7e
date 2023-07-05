@@ -1,0 +1,42 @@
+package view;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+
+import java.awt.BorderLayout;
+import java.util.ArrayList;
+import model.ThucDonModel;
+
+public class ThucDonView extends JFrame{
+	public ThucDonModel thucDonModel;
+	public JRadioButton jRadioButton_Com;
+	public JRadioButton jRadioButton_Pho;
+	public JRadioButton jRadioButton_BanhMi;
+	public ButtonGroup buttonGroup_MonChinh;
+	public JCheckBox jCheckBox_TraSua;
+	public JCheckBox jCheckBox_CocaCola;
+	public JCheckBox jCheckBox_BanhNgot;
+	public JCheckBox jCheckBox_Nem;
+	public JLabel jLabel_ThongTin;
+	public ArrayList list_buttonGroup_MonPhu;
+
+	public ThucDonView() {
+		this.thucDonModel = new ThucDonModel();
+		init();
+	}
+	
+	private void init() {
+		// TODO Auto-generated method stub
+		this.setTitle("Thuc Don");
+		this.setSize(600, 600);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(new BorderLayout());
+		
+		
+		this.setVisible(true);
+	}
+}

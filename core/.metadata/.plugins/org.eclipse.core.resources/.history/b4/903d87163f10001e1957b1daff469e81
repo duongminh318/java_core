@@ -1,0 +1,62 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
+import java.net.URLConnection;
+
+import javax.swing.*;
+
+
+public class MainView2 extends JFrame{
+	private JMenu menu, submenu;
+	private JMenuItem i1, i2, i3, i4, i5;
+	private JMenuBar mb = new JMenuBar();
+	private JButton jButton;
+	private JLabel jLabel;
+
+	public MainView2() {
+		this.setTitle("TITV");
+		this.setSize(600, 600);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLayout(new BorderLayout());
+		
+		// Set Icon => JFrame
+		URL urlIconNotepad = MainView2.class.getResource("icon.png");
+		Image img = Toolkit.getDefaultToolkit().createImage(urlIconNotepad);
+		this.setIconImage(img);
+		
+		
+
+		
+		
+		if (urlIconNotepad != null) {
+		    // Gọi phương thức openConnection() trên đối tượng URL
+		    URLConnection connection = urlIconNotepad.openConnection();
+			//System.out.println("URL ko null");
+		    // Thực hiện các thao tác với connection
+		} else {
+		    // Xử lý trường hợp khi URL là null
+		    System.out.println("URL là null");
+		}
+		
+		this.setJMenuBar(mb);
+		this.add(jLabel, BorderLayout.CENTER);
+		this.add(jButton, BorderLayout.SOUTH);
+		this.setVisible(true);
+		
+	}
+
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			new MainView2();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,39 @@
+package view;
+
+import java.awt.Font;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import model.MyColorModel;
+
+public class MyColorView extends JFrame {
+	private MyColorModel myColorModel;
+	private JLabel jLabel;
+	
+	public MyColorView() {
+		// TODO Auto-generated constructor stub
+		this.myColorModel= new MyColorModel();
+		this.init();
+	}
+
+	private void init() {
+		// TODO Auto-generated method stub
+		this.setTitle("My Color");
+		this.setSize(800, 600);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//set font
+		Font font_text= new Font("Arial", Font.BOLD,100);
+		jLabel= new JLabel("TEXT,......");
+		jLabel.setFont(font_text);
+		
+		JPanel jPanel = new JPanel();
+		jPanel.setLayout(new GridLayout(2,3));
+		this.setVisible(true);
+		
+	}
+
+}

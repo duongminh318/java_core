@@ -1,0 +1,67 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import model.LastButtonModel;
+
+public class LastButtonView extends JFrame {
+	private LastButtonModel lastButtonModel;
+	private JLabel jLabel;
+
+	
+	public LastButtonView() {
+		// TODO Auto-generated constructor stub
+		this.lastButtonModel= new LastButtonModel();
+		this.init();
+		this.setVisible(true);
+	}
+	
+	public void init() {
+		this.setTitle("Last Button");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(600,600);
+		this.setLocationRelativeTo(null);
+		
+		// tao Jpanel_center
+		JPanel jpanel_Center= new JPanel();
+		jpanel_Center.setLayout(new GridLayout(2,2));
+		
+		// tao noi gian => Listener
+		
+		
+		Font font = new Font("Arial", Font.BOLD, 40);
+		// tao cac button va set font cho chung
+		JButton jButton_1 = new JButton("1");
+		jButton_1.setFont(font);
+		
+		JButton jButton_2= new JButton("2");
+		jButton_2.setFont(font);
+		
+		JButton jButton_3= new JButton("3");
+		jButton_3.setFont(font);
+		
+		JButton jButton_4= new JButton("4");
+		jButton_4.setFont(font);
+		
+//		add cac button vao jpanel
+		jpanel_Center.add(jButton_1);
+		jpanel_Center.add(jButton_2);
+		jpanel_Center.add(jButton_3);
+		jpanel_Center.add(jButton_4);
+//		them label vao jframe
+		jLabel = new JLabel("------");
+		jLabel.setFont(font);
+		
+		this.add(jpanel_Center, BorderLayout.CENTER);
+		this.add(jLabel, BorderLayout.SOUTH);
+	}
+
+}

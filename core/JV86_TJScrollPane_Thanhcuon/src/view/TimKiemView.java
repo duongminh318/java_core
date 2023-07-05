@@ -1,0 +1,104 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+import controller.TimKiemListener;
+import model.TimKiemModel;
+
+public class TimKiemView extends JFrame {
+	private TimKiemModel timKiemModel;
+	private JTextArea jTextArea_vanBan;
+	private JTextField jTextField_tuKhoa;
+	private JLabel jLabel_ketQua;
+
+	public TimKiemView() {
+		// TODO Auto-generated constructor stub
+		this.timKiemModel = new TimKiemModel();
+		init();
+		this.setVisible(true);
+	}
+
+	private void init() {
+		// TODO Auto-generated method stub
+		this.setTitle("Tim Kiem");
+		this.setSize(800, 600);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		Font font = new Font("Time new Roman", Font.BOLD, 40);
+
+		
+
+		
+
+//		center
+		//cac component
+		JLabel jLabel_vanBan = new JLabel("van ban");
+		jLabel_vanBan.setFont(font);
+
+		// jtextArea
+		jTextArea_vanBan = new JTextArea(100, 100);
+		jTextArea_vanBan.setFont(font);
+		
+		JScrollPane jScrollPane = new JScrollPane(jTextArea_vanBan, JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+		
+		
+
+//		footer
+		TimKiemListener timKiemListener= new TimKiemListener(this);
+		
+		// cac component thuoc footer
+		JLabel jLabel_tuKhoa = new JLabel("Tu Khoa");
+		jLabel_tuKhoa.setFont(font);
+
+		jTextField_tuKhoa = new JTextField();
+		
+		JButton jButton_thongke= new JButton("thong ke");
+		jButton_thongke.setFont(font);
+		jButton_thongke.addActionListener(timKiemListener);
+		jButton_thongke.setBackground(Color.BLUE);
+		
+		 jLabel_ketQua= new JLabel("ahihi");
+		 jLabel_ketQua.setBackground(Color.ORANGE);
+		 jLabel_ketQua.setOpaque(true);
+		 
+		
+		
+		JPanel JPanel_footer = new JPanel();
+		JPanel_footer.setLayout(new GridLayout(2, 2, 20, 20));
+		 JPanel_footer.add(jLabel_tuKhoa);
+		 JPanel_footer.add(jTextField_tuKhoa);
+		 JPanel_footer.add(jButton_thongke);
+		 JPanel_footer.add(jLabel_ketQua);
+
+//		set layout cho jframe
+		 
+		this.setLayout(new BorderLayout());
+		this.add(jLabel_vanBan, BorderLayout.NORTH);
+		this.add(jScrollPane, BorderLayout.CENTER);
+		this.add(JPanel_footer, BorderLayout.SOUTH);
+
+	}
+
+	
+	public void timKiem() {
+		
+		this.timKiemModel.setVanBan(jTextArea_vanBan.getText());
+		this.timKiemModel.setTuKhoa(jTextField_tuKhoa.getText());
+		this.timKiemModel.timKiem();
+		this.jLabel_ketQua.setText(this.timKiemModel.getKetQua());
+		
+	}
+}

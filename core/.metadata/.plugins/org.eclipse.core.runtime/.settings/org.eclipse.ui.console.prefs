@@ -1,0 +1,5 @@
+ANSI_support_color_palette=paletteVGA
+ANSI_support_show_escapes=true
+ANSI_support_use_windows_color_mapping=true
+eclipse.preferences.version=1
+org.eclipse.ui.console.P_CONSOLE_WORD_WRAP=true

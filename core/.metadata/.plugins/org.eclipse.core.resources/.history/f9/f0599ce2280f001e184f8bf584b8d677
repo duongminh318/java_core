@@ -1,0 +1,37 @@
+package view;
+
+import java.awt.HeadlessException;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import model.MiniCalculatorModel;
+
+public class MiniCalculatorView extends JFrame {
+	private MiniCalculatorModel miniCalculatorModel;
+	private JTextField jTextField_firstValue;
+	private JTextField jTextField_secondValue;
+	private JTextField jTextField_answer;
+	
+	public MiniCalculatorView() throws HeadlessException{
+		// TODO Auto-generated constructor stub
+		this.miniCalculatorModel= new MiniCalculatorModel();
+		init();
+	}
+	
+	
+	
+	
+
+
+
+	private void init() {
+		// TODO Auto-generated method stub
+		this.setTitle("Mini Calculator");
+		this.setSize(600,300);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+	}
+
+}

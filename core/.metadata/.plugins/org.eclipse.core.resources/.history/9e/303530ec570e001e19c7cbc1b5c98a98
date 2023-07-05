@@ -1,0 +1,17 @@
+
+
+public class Snippet {
+	JFrame() ⇒ tạo một JFrame
+	
+	setVisible(boolean b) ⇒ ẩn, hiện JFrame
+	
+	setTitle (String tilte) ⇒ gắn tên cho jFrame
+	
+	setSize (int width, int height) ⇒ quy định kích cỡ JFrame
+	
+	setLocation (int x, int y) ⇒ vị trí hiển thị
+	
+	pack() ⇒ đóng gói
+	
+	setDefaultCloseOperation( int operation) ⇒ quy định điều khiển khi đóng
+}

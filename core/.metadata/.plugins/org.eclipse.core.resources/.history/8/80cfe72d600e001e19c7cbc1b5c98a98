@@ -1,0 +1,20 @@
+package view;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.text.JTextComponent;
+
+public class MyCalculator extends JFrame {
+	public MyCalculator() {
+		// TODO Auto-generated constructor stub
+		this.setTitle("My Calculator");
+		this.setSize(300, 600);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JTextField jTextField new JTextField();
+		
+		this.setVisible(true);
+	}
+
+}

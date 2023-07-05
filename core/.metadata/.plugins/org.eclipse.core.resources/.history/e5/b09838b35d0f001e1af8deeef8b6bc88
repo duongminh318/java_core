@@ -1,0 +1,70 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+import model.TimKiemModel;
+
+public class TimKiemView extends JFrame {
+	private TimKiemModel timKiemModel;
+	private JTextArea jTextArea_vanBan;
+	private JTextField jTextField_tuKhoa;
+
+	public TimKiemView() {
+		// TODO Auto-generated constructor stub
+		this.timKiemModel = new TimKiemModel();
+		init();
+		this.setVisible(true);
+	}
+
+	private void init() {
+		// TODO Auto-generated method stub
+		this.setTitle("Tim Kiem");
+		this.setSize(800, 600);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		Font font = new Font("Time new Roman", Font.BOLD, 40);
+
+		JLabel jLabel_vanBan = new JLabel("van ban");
+		jLabel_vanBan.setFont(font);
+
+		// jtextArea
+		jTextArea_vanBan = new JTextArea(100, 100);
+		jTextArea_vanBan.setFont(font);
+
+		JLabel jLabel_tuKhoa = new JLabel("Tu Khoa");
+		jLabel_tuKhoa.setFont(font);
+
+		jTextField_tuKhoa = new JTextField();
+
+//		center
+		JPanel JPanel_center = new JPanel();
+		JPanel_center.setLayout(new GridLayout(2, 1, 10, 10));
+
+		// add cac component vao Panel
+		JPanel_center.add(jLabel_vanBan);
+		JPanel_center.add(jTextArea_vanBan);
+
+//		footer
+		JPanel JPanel_footer = new JPanel();
+		JPanel_footer.setLayout(new GridLayout(2, 2));
+		 JPanel_footer.add(jLabel_tuKhoa);
+		 JPanel_footer.add(jTextField_tuKhoa);
+
+		 
+		this.setLayout(new BorderLayout());
+		this.add(JPanel_center, BorderLayout.CENTER);
+		this.add(JPanel_footer, BorderLayout.SOUTH);
+
+	}
+
+}

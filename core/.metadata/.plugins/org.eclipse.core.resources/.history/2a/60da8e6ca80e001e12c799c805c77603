@@ -1,0 +1,50 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import model.LastButtonModel;
+
+public class LastButtonView extends JFrame {
+	private LastButtonModel lastButtonModel;
+	private JLabel jLabel;
+	private JButton jbt;
+	
+	public LastButtonView() {
+		// TODO Auto-generated constructor stub
+		this.lastButtonModel= new LastButtonModel();
+		this.init();
+		this.setVisible(true);
+	}
+	
+	public void init() {
+		this.setTitle("Last Button");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(600,600);
+		this.setLocationRelativeTo(null);
+		
+		// tao Jpanel_center
+		JPanel jpanel_Center= new JPanel();
+		jpanel_Center.setLayout(new GridLayout(2,2));
+		
+		
+		Font font = new Font("Arial", Font.BOLD, 40);
+		jbt = new JButton("1");
+		jbt.setFont(font);
+		jbt = new JButton("2");
+		jbt.setFont(font);
+		
+		jpanel_Center.add(jbt);
+		jpanel_Center.add(jbt);
+		
+		this.add(jpanel_Center, BorderLayout.CENTER);
+	}
+
+}

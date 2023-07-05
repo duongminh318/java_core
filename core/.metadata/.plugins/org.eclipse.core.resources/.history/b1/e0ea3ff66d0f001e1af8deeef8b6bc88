@@ -1,0 +1,42 @@
+package view;
+
+import java.awt.Color;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import model.MouseExampleModel;
+
+public class MouseExampleView extends JFrame {
+	private MouseExampleModel model;
+	public MouseExampleView() {
+		// TODO Auto-generated constructor stub
+		this.model=new MouseExampleModel();
+		this.init();
+	}
+	private void init() {
+		// TODO Auto-generated method stub
+		this.setTitle("Mouse Example");
+		this.setSize(400, 500);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		
+		// jPanel_mouse => panel o tren di chuot len
+		JPanel jPanel_mouse= new JPanel();
+		jPanel_mouse.setBackground(Color.CYAN);
+		//jPanel_info => hien thi cac thong tin 
+		JPanel jPanel_info= new JPanel();
+		jPanel_info.setLayout(new GridLayout(3,3));
+		
+		JLabel jLabel_position= new JLabel("Position");
+		JLabel jLabel_x= new JLabel();
+		JLabel jLabel_y= new JLabel();
+		JLabel jLabel_count= new JLabel("Numbers of click");
+		
+		this.setVisible(true);
+
+	}
+}

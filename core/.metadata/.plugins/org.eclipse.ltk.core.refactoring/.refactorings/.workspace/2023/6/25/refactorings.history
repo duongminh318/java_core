@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;JV86_TJScrollPanel_Thanhcuon&apos; to &apos;JV86_TJScrollPane_Thanhcuon&apos;&#x0D;&#x0A;- Original element: &apos;JV86_TJScrollPanel_Thanhcuon&apos;&#x0D;&#x0A;- Renamed element: &apos;JV86_TJScrollPanel_Thanhcuon&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;JV86_TJScrollPanel_Thanhcuon&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=JV86_TJScrollPanel_Thanhcuon" name="JV86_TJScrollPane_Thanhcuon" references="true" stamp="1687263693408" version="1.0"/>
+</session>

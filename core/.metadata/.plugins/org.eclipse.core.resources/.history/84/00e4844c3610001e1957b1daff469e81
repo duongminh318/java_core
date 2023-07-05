@@ -1,0 +1,181 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.JToolBar;
+import javax.swing.KeyStroke;
+
+import controller.MenuExampleController;
+import controller.MenuExampleMouseListener;
+
+public class MenuExampleView extends JFrame {
+	private JLabel jLabel;
+	public JPopupMenu JPopupMenu;
+	private Component jToolBar;
+
+	public MenuExampleView() {
+		// TODO Auto-generated constructor stub
+		this.setTitle("Menu Example");
+		this.setSize(500, 500);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		this.setLayout(new BorderLayout());
+		// Tạo thanh menu
+		JMenuBar jMenuBar = new JMenuBar();
+
+		// Tạo controller
+		MenuExampleController menuExampleController = new MenuExampleController(this);
+
+		// Tạo 1 menu bự File
+		JMenu jMenu_file = new JMenu("File");
+		// tạo các menu con
+		JMenuItem jMenuItem_new = new JMenuItem("New");
+		jMenuItem_new.addActionListener(menuExampleController);
+
+		JMenuItem jMenuItem_open = new JMenuItem("Open", KeyEvent.VK_O);
+		jMenuItem_open.addActionListener(menuExampleController);
+		jMenuItem_open.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_DOWN_MASK));
+
+		JMenuItem jMenuItem_exit = new JMenuItem("Exit", KeyEvent.VK_E);
+		jMenuItem_exit.addActionListener(menuExampleController);
+		jMenuItem_exit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.CTRL_DOWN_MASK));
+
+		// thêm menu con vào menu bự
+		jMenu_file.add(jMenuItem_new);
+		jMenu_file.add(jMenuItem_open);
+		jMenu_file.addSeparator(); // dấu gạch ngang
+		jMenu_file.add(jMenuItem_exit);
+
+		// Menu View
+		JMenu jMenu_view = new JMenu("View");
+		JCheckBoxMenuItem jCheckBoxMenuItem_toolbar = new JCheckBoxMenuItem("Toolbar");
+		jCheckBoxMenuItem_toolbar.addActionListener(menuExampleController);
+		jMenu_view.add(jCheckBoxMenuItem_toolbar);
+		jCheckBoxMenuItem_toolbar.addActionListener(menuExampleController);
+		jMenu_view.addActionListener(menuExampleController);
+
+		// Tạo 1 menu bự Help
+		JMenu jMenu_help = new JMenu("Help");
+		jMenu_help.setMnemonic(KeyEvent.VK_L);
+		jMenu_help.setDisplayedMnemonicIndex(0);
+//		jMenu_help.addActionListener(menuExampleController);
+
+		// tạo và thêm menu con welcome
+		JMenuItem jMenuItem_welcome = new JMenuItem("Welcome");
+		// cài gián điệp nghe lén
+		jMenuItem_welcome.addActionListener(menuExampleController);
+		jMenu_help.add(jMenuItem_welcome);
+
+		JMenu jMenu_vnch = new JMenu("vnch");
+		jMenu_vnch.setMnemonic(KeyEvent.VK_V);
+		jMenu_vnch.setDisplayedMnemonicIndex(0);
+		JMenuItem jMenuItem_vnch1 = new JMenuItem("vnch1");
+		jMenuItem_vnch1.addActionListener(menuExampleController);
+		jMenu_vnch.add(jMenuItem_vnch1);
+
+		// thêm 2 menu bự vào trên thanh menu
+		jMenuBar.add(jMenu_file);
+		jMenuBar.add(jMenu_view);
+		jMenuBar.add(jMenu_help);
+		jMenuBar.add(jMenu_vnch);
+
+		// Thêm thanh thanh menu vào chương trình
+		this.setJMenuBar(jMenuBar);
+
+		// tạo ToolBar(thanh công cụ)
+		JToolBar jToolBar = new JToolBar();
+		// tao cac button
+		JButton jButton_Undo = new JButton("Undo");
+		jButton_Undo.setToolTipText("Nhấn vào đây để quay lại thao tác vừa rồi!");
+		jButton_Undo.addActionListener(menuExampleController);
+		JButton jButton_Redo = new JButton("Redo");
+		jButton_Redo.addActionListener(menuExampleController);
+		jButton_Redo.setToolTipText("nhan vao day de re do chu lam gi");
+		JButton jButton_Copy = new JButton("Copy");
+		jButton_Copy.setToolTipText("copy cc, hoc hanh doi copy a");
+		jButton_Copy.addActionListener(menuExampleController);
+		JButton jButton_Cut = new JButton("Cut");
+		jButton_Cut.setToolTipText("cut cmm di");
+		jButton_Cut.addActionListener(menuExampleController);
+		JButton jButton_Paste = new JButton("Paste");
+		jButton_Paste.setToolTipText("muon dan khong");
+		jButton_Paste.addActionListener(menuExampleController);
+		// add may button vao jtoolbar
+		jToolBar.add(jButton_Undo);
+		jToolBar.add(jButton_Redo);
+		jToolBar.add(jButton_Copy);
+		jToolBar.add(jButton_Cut);
+		jToolBar.add(jButton_Paste);
+
+		// add toolbar vao jframe
+		// this.add(jToolBar, BorderLayout.NORTH);
+
+		//// tạo Menu chuột phải JPopupMenu
+		JPopupMenu = new JPopupMenu();
+
+		JMenu jMenuPoupFont = new JMenu("Font");
+		JMenuItem jMenuItemType = new JMenuItem("Type");
+		jMenuItemType.addActionListener(menuExampleController);
+		JMenuItem jMenuItemSize = new JMenuItem("Size");
+		jMenuItemSize.addActionListener(menuExampleController);
+		jMenuPoupFont.add(jMenuItemType);
+		jMenuPoupFont.add(jMenuItemSize);
+
+		JMenuItem jMenuItemCut = new JMenuItem("Cut");
+		jMenuItemCut.addActionListener(menuExampleController);
+		JMenuItem jMenuItemCopy = new JMenuItem("Copy");
+		jMenuItemCopy.addActionListener(menuExampleController);
+		JMenuItem jMenuItemPaste = new JMenuItem("Paste");
+		jMenuItemPaste.addActionListener(menuExampleController);
+
+		JPopupMenu.add(jMenuPoupFont);
+		JPopupMenu.addSeparator();
+		JPopupMenu.add(jMenuItemCut);
+		JPopupMenu.add(jMenuItemCopy);
+		JPopupMenu.add(jMenuItemPaste);
+
+		this.add(JPopupMenu);
+
+		// Thêm sự kiện phải chuột vào JLabel
+		MenuExampleMouseListener menuExampleMouseListener = new MenuExampleMouseListener(this);
+		this.addMouseListener(menuExampleMouseListener);
+
+		// Tạo label hiển thị
+		Font font = new Font("Arial", Font.BOLD, 50);
+		jLabel = new JLabel();
+		// set layout cho jframe
+
+		// add label vao jframe
+		this.add(jLabel, BorderLayout.CENTER);
+
+		this.setVisible(true);
+
+	}
+
+	public void setTextJLabel(String s) {
+		this.jLabel.setText(s);
+	}
+
+	public void enableToolbar() {
+
+		this.add(jToolBar, BorderLayout.NORTH);
+	}
+
+	public void disableToolbar() {
+
+		this.remove(jToolBar);
+	}
+
+}

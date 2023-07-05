@@ -1,0 +1,40 @@
+package view;
+
+import javax.swing.JFrame;
+
+public class MyWindow extends JFrame {
+	public MyWindow() {
+		
+	}
+	public void Show()
+	{
+		this.setVisible(true);
+	}
+	
+	public void Show(String title) {
+		
+		this.setTitle(title);
+		this.setVisible(true);
+	}
+	
+	public void Show(String tille, int width, int height) {
+		
+		this.setTitle(tille);
+		this.setSize(width, height);
+		this.setVisible(true);
+	}
+	
+public void Show(String tille, int width, int height, int x, int y) {
+		
+		this.setTitle(tille);
+		this.setSize(width, height);
+		this.setLocation(x,y);
+		this.setVisible(true);
+	}
+
+public static void main(String[] args) {
+	MyWindow m1= new MyWindow();
+	m1.Show(null, 100, 200, EXIT_ON_CLOSE, ABORT);
+}
+
+}

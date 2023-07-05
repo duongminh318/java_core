@@ -1,0 +1,23 @@
+package View;
+
+import javax.swing.JFrame;
+
+public class ViDu_FlowLayout extends JFrame {
+	
+	public ViDu_FlowLayout() {
+		this.setTitle("ViDu_FlowLayout");
+		this.setSize(600,400);
+//		null => can giua cua so chuong trinh
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ViDu_FlowLayout vd1= new ViDu_FlowLayout();
+		
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package view;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import model.LastButtonModel;
+
+public class LastButtonView extends JFrame {
+	private LastButtonModel lastButtonModel;
+	private JLabel jLabel;
+	private JButton jbt;
+	
+	public LastButtonView() {
+		// TODO Auto-generated constructor stub
+		this.lastButtonModel= new LastButtonModel();
+		this.init();
+		this.setVisible(true);
+	}
+	
+	public void init() {
+		this.setTitle("Last Button");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(600,600);
+		this.setLocationRelativeTo(null);
+		
+	}
+
+}

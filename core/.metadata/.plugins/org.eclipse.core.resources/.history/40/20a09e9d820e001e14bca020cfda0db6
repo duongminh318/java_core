@@ -1,0 +1,53 @@
+package view;
+/* goc nhin giao dien nguoi dung*/
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import model.CounterModel;
+
+public class CounterView extends JFrame{
+	private CounterModel counterModel;
+	
+	private JButton JButton_up;
+	private JButton JButton_down;
+	private JLabel jLabel_value;
+	
+	
+	public CounterView() {
+		// TODO Auto-generated method stub
+		this.counterModel= new CounterModel();
+		this.init();
+		this.setVisible(true);
+	}
+//khởi tạo và sắp xếp layout
+	public void init() {
+		// TODO Auto-generated method stub
+		this.setTitle("Counter");
+		this.setSize(300, 400);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JButton_up = new JButton("up");
+		JButton_down = new JButton("down");
+		jLabel_value= new JLabel(this.counterModel.getValue()+"",JLabel.CENTER);
+//		chuyền giá trị value (một hàm của model vào) label
+		JPanel jPannel = new JPanel();
+		jPannel.setLayout(new BorderLayout());
+		jPannel.add(JButton_up, BorderLayout.WEST);
+		jPannel.add(jLabel_value, BorderLayout.CENTER);
+		jPannel.add(JButton_down, BorderLayout.EAST);
+		this.setLayout(new BorderLayout());
+		this.add(jPannel, BorderLayout.CENTER);
+		
+	}
+	
+	
+	
+	
+
+}

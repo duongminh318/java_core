@@ -1,0 +1,11 @@
+Console.highWaterMark=88000
+Console.interpret_cr_as_control_characters=false
+Console.wrap=true
+StringVariablePreferencePage=145,121,121,96,
+eclipse.preferences.version=1
+org.eclipse.debug.ui.MemoryHistoryKnownColor=0,0,0
+org.eclipse.debug.ui.MemoryHistoryUnknownColor=114,119,129
+org.eclipse.debug.ui.PREF_CHANGED_VALUE_BACKGROUND=255,255,0
+org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
+org.eclipse.debug.ui.changedDebugElement=255,0,0
+preferredTargets=default\:default|default,org.eclipse.lsp4e.debug.toggleBreakpointTarget\:default|org.eclipse.lsp4e.debug.toggleBreakpointTarget\:org.eclipse.lsp4e.debug.toggleBreakpointTarget|

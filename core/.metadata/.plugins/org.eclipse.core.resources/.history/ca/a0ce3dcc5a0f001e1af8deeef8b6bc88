@@ -1,0 +1,35 @@
+package view;
+
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import model.TimKiemModel;
+
+public class TimKiemView extends JFrame {
+	private TimKiemModel timKiemModel;
+	
+	public TimKiemView() {
+		// TODO Auto-generated constructor stub
+		this.timKiemModel=  new TimKiemModel();
+		init();
+	}
+	private void init() {
+		// TODO Auto-generated method stub
+		this.setTitle("Tim Kiem");
+		this.setSize(800, 600);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		this.setVisible(true);
+		
+		
+		Font font= new Font("Time new Roman", Font.BOLD, 40);
+		JLabel jLabel_vanBan= new JLabel("van ban");
+		jLabel_vanBan.set
+		
+
+	}
+
+}
